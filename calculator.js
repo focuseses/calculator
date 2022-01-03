@@ -111,8 +111,6 @@ function clearall() {
 
 }
 
-//float
-
 
 
 function round(number) {
