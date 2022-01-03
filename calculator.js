@@ -3,16 +3,18 @@ let num2 = '';
 let operator = null;
 let to_clear = false;
 
-window.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     const numbuttons = document.querySelectorAll(".num");
     const opbuttons = document.querySelectorAll(".op");
-    const equal = document.getElementById("eq");
-    const backspace = document.getElementById("backspace");
-    const ac = document.getElementById("clear");
+    const equal = document.querySelector(".eq");
+    const backspace = document.querySelector(".backspace");
+    const ac = document.querySelector(".clear");
 
     const last = document.getElementById("last");
     const current = document.getElementById("current");
 
+
+    window.addEventListener('keydown', keyboard);
     equal.addEventListener('click', evaluate);
     ac.addEventListener('click', clearall);
     backspace.addEventListener('click', del);
@@ -20,22 +22,7 @@ window.addEventListener('DOMContentLoaded', function() {
     numbuttons.forEach((num) => num.addEventListener('click', () => shownum(num)));
 
     opbuttons.forEach((op) => op.addEventListener('click', () => setoperator(op)));
-
-    document.addEventListener('keydown', (event) => {
-
-        if (['/', 'x', '+', '-', '*', '%'].includes(event.key)) {
-            document.querySelectorAll(".op").click();
-        }
-        if (event.key === 'Backspace' || event.key === 'c' || event.key === 'C') {
-            document.getElementById('clear').click();
-        }
-        if (event.key === '=' || event.key === 'Enter') {
-            document.getElementById('eq').click();
-        }
-
-    });
 });
-
 //four operation 
 function operate(operator, a, b) {
     if (operator === "+") {
@@ -64,6 +51,30 @@ function shownum(num) {
     }
     current.textContent += num.textContent;
 
+}
+
+function shownum2(num) {
+    if (current.textContent === "0" || to_clear === true) {
+        reset();
+    }
+    current.textContent += num;
+
+}
+
+//keyboard functionality (non click)
+function keyboard(x) {
+    if (x.key >= 0 && x.key <= 9) {
+        shownum2(x.key);
+    }
+    if (x.key === '=' || x.key === 'Enter') {
+        evaluate();
+    }
+    if (x.key === 'Backspace') {
+        del();
+    }
+    if (x.key === '+' || x.key === '-' || x.key === '*' || x.key === '/') {
+        setoperator2(x.key);
+    }
 
 }
 
@@ -77,7 +88,17 @@ function setoperator(op) {
         to_clear = true;
 
     }
+}
 
+function setoperator2(op) {
+    if (op !== null) {
+        evaluate();
+        num1 = current.textContent;
+        operator = op;
+        last.textContent = `${num1} ${operator}`;
+        to_clear = true;
+
+    }
 }
 
 //press equal
@@ -97,7 +118,6 @@ function evaluate() {
 
 //remove last digit
 function del() {
-
     current.textContent = current.textContent.toString().slice(0, -1);
 }
 
@@ -110,8 +130,6 @@ function clearall() {
     operator = null;
 
 }
-
-
 
 function round(number) {
     return Math.round(number * 1000) / 1000
