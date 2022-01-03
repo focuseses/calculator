@@ -1,0 +1,100 @@
+table,
+th,
+td {
+    border: 1px solid black;
+    text-align: center;
+}
+
+#last {
+    color: grey;
+    font-size: smaller;
+}
+
+.screen {
+    padding-top: 10px;
+    height: 10px;
+    text-align: right;
+    padding-right: 20px;
+}
+
+table {
+    table-layout: fixed;
+    width: 30%;
+    margin: 0 auto;
+}
+
+​ td {
+    text-align: center;
+}
+
+div {
+    padding-top: 25px;
+}
+
+.aside {
+    padding-top: 0px;
+    font-size: smaller;
+    text-align: center;
+}
+
+.title,
+.answer {
+    font-weight: 300;
+    font-size: medium;
+    text-align: center;
+}
+
+.num {
+    background-color: grey;
+    border-width: thin;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.op {
+    background-color: orange;
+    border-width: thin;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#eq {
+    background-color: rgb(12, 173, 12);
+    border-width: thin;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#backspace {
+    background-color: lightseagreen;
+    border-width: thin;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#clear {
+    background-color: orangered;
+    border-width: thin;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}

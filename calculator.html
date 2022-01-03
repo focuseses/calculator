@@ -1,0 +1,66 @@
+<html lang="en">
+<!DOCTYPE html>
+
+<head>
+    <title>Basic Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="calculator.js"></script>
+</head>
+
+<body>
+    <div class="title">
+        Basic Calculator :)
+    </div>
+    <p class="aside">
+        for graphs: use <a href="https://www.desmos.com/calculator">Desmos</a>!
+    </p>
+
+    <table>
+        <tr>
+            <td colspan="4" class="screen">
+                <p id="last"> </p>
+                <p id="current">0</p>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td><button type="button" class="num">1</button></td>
+            <td><button type="button" class="num">2</button></td>
+            <td><button type="button" class="num">3</button></td>
+            <td><button type="button" class="op">+</button></td>
+
+        </tr>
+        <tr>
+            <td><button type="button" class="num">4</button></td>
+            <td><button type="button" class="num">5</button></td>
+            <td><button type="button" class="num">6</button></td>
+            <td><button type="button" class="op">-</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" class="num">7</button></td>
+            <td><button type="button" class="num">8</button></td>
+            <td><button type="button" class="num">9</button></td>
+            <td><button type="button" class="op">*</button></td>
+        </tr>
+
+
+        <tr>
+            <td><button type="button" id="backspace"><=</button></td>
+            <td><button type="button" id="clear">AC</button></td>
+            <td><button type="button" id="eq">=</button></td>
+            <td><button type="button" class="op">/</button></td>
+
+
+
+        </tr>
+
+
+
+    </table>
+
+
+</body>
+
+</html>
