@@ -6,9 +6,9 @@ let to_clear = false;
 document.addEventListener('DOMContentLoaded', function() {
     const numbuttons = document.querySelectorAll(".num");
     const opbuttons = document.querySelectorAll(".op");
-    const equal = document.querySelector(".eq");
-    const backspace = document.querySelector(".backspace");
-    const ac = document.querySelector(".clear");
+    const equal = document.getElementById("eq"); 
+    const backspace = document.getElementById("backspace");
+    const ac = document.getElementById("clear");
 
     const last = document.getElementById("last");
     const current = document.getElementById("current");
